@@ -5,9 +5,11 @@ import { useCallback, useState } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { MenuItem } from '@/components/navbar';
 import { Avatar } from '../avatar';
+import { useRegisterModal } from '@/hooks';
 
 function UserMenu() {
   const router = useRouter();
+  const registerModal = useRegisterModal();
   const [isOpen, setOpen] = useState(false);
   const toggleOpen = useCallback(() => setOpen((prev) => !prev), []);
 
@@ -71,7 +73,7 @@ function UserMenu() {
           "
         >
           <div className="flex flex-col cursor-pointer">
-            {true ? (
+            {false ? (
               <>
                 <MenuItem
                   label="My trips"
@@ -96,7 +98,7 @@ function UserMenu() {
             ) : (
               <>
                 {/* <MenuItem label="Login" onClick={loginModal.onOpen} /> */}
-                {/* <MenuItem label="Sign up" onClick={registerModal.onOpen} /> */}
+                <MenuItem label="Sign up" onClick={registerModal.onOpen} />
               </>
             )}
           </div>
