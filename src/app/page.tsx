@@ -1,7 +1,3 @@
-import Image from 'next/image'
-
 export default function Home() {
-  return (
-    <div>Hellow, World!</div>
-  )
+  return <div className="w-full h-2">Hellow, World!</div>;
 }
